@@ -32,7 +32,6 @@ export default function ResultsPage() {
   const { result, url } = useSeoStore();
   const resultsRef = useRef<HTMLDivElement>(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const theme = useTheme();
   
   if (!result) return null;
   
@@ -82,10 +81,10 @@ export default function ResultsPage() {
       Description: ${result.meta.description}
       
       Top Issues:
-      ${result.seo.issues.map(issue => `- ${issue.title}`).join('\n')}
+      ${result.seo.issues.map((issue: { title: string }) => `- ${issue.title}`).join('\n')}
       
       Top Suggestions:
-      ${result.suggestions.map(suggestion => `- ${suggestion.title} (${suggestion.priority} priority)`).join('\n')}
+      ${result.suggestions.map((suggestion: { title: string; priority: string }) => `- ${suggestion.title} (${suggestion.priority} priority)`).join('\n')}
     `;
     
     navigator.clipboard.writeText(text.trim());

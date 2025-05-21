@@ -29,8 +29,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       const supabase = createClient();
       const { data: { session } } = await supabase.auth.getSession();
       set({ user: session?.user || null, loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -45,8 +46,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ user: data.user, loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -63,8 +65,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -81,8 +84,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -99,8 +103,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -118,8 +123,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ user: data.user, loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -131,8 +137,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ user: null, loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 
@@ -146,8 +153,9 @@ export const useAuthStore = create<AuthState>((set) => ({
       
       if (error) throw error;
       set({ loading: false });
-    } catch (error: any) {
-      set({ error: error.message, loading: false });
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      set({ error: errorMessage, loading: false });
     }
   },
 }));

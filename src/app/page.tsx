@@ -24,12 +24,11 @@ import {
   Search as SearchIcon,
   Timeline as TimelineIcon,
   PhoneAndroid as PhoneAndroidIcon,
-  ArrowForward as ArrowForwardIcon,
-  Speed as SpeedIcon
+  ArrowForward as ArrowForwardIcon
 } from '@mui/icons-material';
 
 export default function Home() {
-  const { result, error, isAnalyzing } = useSeoStore();
+  const { result, isAnalyzing } = useSeoStore();
   const { user, checkSession } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const theme = useTheme();

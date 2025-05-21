@@ -8,18 +8,15 @@ import {
   Box,
   TextField,
   Button,
-  Typography,
   CircularProgress,
   InputAdornment,
-  Paper,
-  useTheme
+  Paper
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 export default function UrlInput() {
   const { url, setUrl, startAnalysis, isAnalyzing } = useSeoStore();
   const [error, setError] = useState('');
-  const theme = useTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

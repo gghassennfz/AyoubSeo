@@ -5,10 +5,8 @@ import {
   Box,
   Paper,
   Typography,
-  Grid,
   Stack,
-  Divider,
-  useTheme
+  Divider
 } from '@mui/material';
 import {
   CheckCircle as CheckCircleIcon,
@@ -29,7 +27,6 @@ interface MetaInfoCardProps {
 }
 
 export default function MetaInfoCard({ metaInfo }: MetaInfoCardProps) {
-  const theme = useTheme();
   
   return (
     <Paper 

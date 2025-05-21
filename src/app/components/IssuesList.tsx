@@ -9,8 +9,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
-  useTheme
+  Divider
 } from '@mui/material';
 import {
   Error as ErrorIcon,
@@ -30,7 +29,6 @@ interface IssuesListProps {
 }
 
 export default function IssuesList({ issues, title }: IssuesListProps) {
-  const theme = useTheme();
   
   if (issues.length === 0) {
     return (
